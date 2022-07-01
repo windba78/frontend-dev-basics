@@ -18,7 +18,7 @@ o1.another.age = 30;
 console.log(o1);
 
 // 사용자 생성자 함수
-var MyObject = function(name) {
+var MyObject = function (name) {
     this.name = name;
 }
 var o2 = new MyObject('이희제');
@@ -49,5 +49,5 @@ console.log(o4);
 // XmlHttpRequest 호스트(브라우저) 객체를 사용해서
 // 통신(AJAX)에서 데이터 교환의 포맷으로 JSON을 사용한다.
 var response = "{ name: '둘리', email:'dooly@mysite.com' }";
-var userVo = eval("(" + response  + ")");
+var userVo = eval("(" + response + ")");
 console.log(userVo.name, userVo.email);
