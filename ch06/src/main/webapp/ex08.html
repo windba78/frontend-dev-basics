@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.addEventListener("load", function() {
+		var imgElement = document.createElement("img");
+		imgElement.src = "https://mblogthumb-phinf.pstatic.net/20150102_291/tnwksh_14201936689533spVk_JPEG/K-932.jpg?type=w2";
+		imgElement.style.width = "200px";
+		imgElement.alt = "아스날";
+		imgElement.title = "아스날 로고";
+		
+		setTimeout(function() {
+			document.body.appendChild(imgElement);
+		}, 2000);
+	});
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
