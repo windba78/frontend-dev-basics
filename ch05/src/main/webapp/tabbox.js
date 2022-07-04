@@ -17,6 +17,9 @@ var tabBox = {
 		var ul = divTabBox.childNodes[1];
 		var liTabs = ul.getElementsByTagName("li");
 
+		var lisSelected = document.getElementsByClassName('selected');
+		lisSelected.length == 0 && (liTabs[4].className = 'selected');
+
 		for (var i = 0; i < liTabs.length; i++) {
 			liTabs[i].addEventListener("click", this._onTabClicked);
 		}
