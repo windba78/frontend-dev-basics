@@ -25,7 +25,6 @@ var imageViewer = {
 			// 2. 버튼 텍스트: 중지 -> 시작
 			$("#btn-slideshow").text("슬라이드쇼 중지");
 		}
-		intervalId = null;
 	},
 	_showImageName: function() {
 		alert($(this).attr('alt'));
