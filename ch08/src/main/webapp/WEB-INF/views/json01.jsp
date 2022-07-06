@@ -18,10 +18,15 @@
 				type : "get",
 				dataType : "json",
 				success : function(response) {
+					if (response.result !== 'success') {
+						console.error(response.message);
+						return;
+					}
+					var vo = response.data;
 					var htmls = "";
-					htmls += "<h3>" + response.no + "</h3>";
-					htmls += "<h4>" + response.name + "</h4>";
-					htmls += "<h5>" + response.content + "</h5>";
+					htmls += "<h3>" + vo.no + "</h3>";
+					htmls += "<h4>" + vo.name + "</h4>";
+					htmls += "<h5>" + vo.content + "</h5>";
 
 					$("#data").html(htmls);
 				},

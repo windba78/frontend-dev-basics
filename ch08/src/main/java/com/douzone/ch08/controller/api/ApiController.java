@@ -2,8 +2,10 @@ package com.douzone.ch08.controller.api;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.douzone.ch08.dto.JSONResult;
 import com.douzone.ch08.vo.GuestbookVo;
 
 @Controller
@@ -23,13 +25,13 @@ public class ApiController {
 	}
 
 	@ResponseBody
-	@RequestMapping("/json")
-	public Object json() {
+	@RequestMapping(value = "/json", method = RequestMethod.GET)
+	public JSONResult json() {
 		GuestbookVo vo = new GuestbookVo();
 		vo.setNo(1L);
 		vo.setName("둘리");
 		vo.setContent("호이~");
 
-		return vo;
+		return JSONResult.success(vo);
 	}
 }
