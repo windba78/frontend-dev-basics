@@ -60,6 +60,19 @@
 				}
 			});
 		});
+
+		$("#delete").click(function() {
+			$.ajax({
+				url : "${pageContext.request.contextPath }/api/user/10",
+				type : "delete",
+				datatype : "json",
+				contentType : "application/x-www-form-urlencoded",
+				data : "password=1234",
+				success : function(response) {
+					console.log(response);
+				}
+			});
+		});
 	});
 </script>
 </head>

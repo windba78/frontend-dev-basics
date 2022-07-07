@@ -3,6 +3,7 @@ package com.douzone.ch08.controller.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,7 +51,7 @@ public class RestApiController {
 	}
 
 	@GetMapping("/{no}")
-	public JSONResult read(@PathVariable Long no) {
+	public JSONResult read(@PathVariable("no") Long no) {
 		UserVo vo = new UserVo();
 		vo.setNo(no);
 		vo.setName("둘리");
@@ -61,12 +62,20 @@ public class RestApiController {
 	}
 
 	@PutMapping("/{no}")
-	public JSONResult update(@PathVariable Long no, @RequestBody UserVo vo) {
+	public JSONResult update(@PathVariable("no") Long no, @RequestBody UserVo vo) {
 		System.out.println("no: " + no);
 		System.out.println("userVo: " + vo);
 		vo.setNo(no);
 		vo.setPassword("");
 
 		return JSONResult.success(vo);
+	}
+
+	@DeleteMapping("/{no}")
+	public JSONResult delete(@PathVariable("no") Long no, String password) {
+		System.out.println("no: " + no);
+		System.out.println("password: " + password);
+
+		return JSONResult.success(no);
 	}
 }
