@@ -18,7 +18,7 @@
  
 var render = function(vo, mode) {
 	var htmls = 
-		"<li data-no=''>" +
+		"<li data-no='" + vo.no + "'>" +
 		"<strong>" + vo.name + "</strong>" +
 		"<p>" + vo.content + "</p>" +
 		"<strong></strong>" +
@@ -28,7 +28,7 @@ var render = function(vo, mode) {
 		$("#list-guestbook")[mode ? "append" : "prepend"](htmls);
 };
 
-$(function(){
+var fetch = function(){
 	
 	$.ajax({
 		url: "/ch08/api/guestbook",
@@ -45,6 +45,14 @@ $(function(){
 			});
 		}		
 	});
+};
+
+$(function(){
+	// ...
+	// ...
+	// ...
+
+	fetch();
 });
 </script>
 </head>

@@ -14,7 +14,7 @@
 var render = function(vo, mode) {
 	console.log(vo);
 	var htmls = 
-		"<li data-no=''>" +
+		"<li data-no='" + vo.no + "'>" +
 		"<strong>" + vo.name + "</strong>" +
 		"<p>" + vo.content + "</p>" +
 		"<strong></strong>" +
